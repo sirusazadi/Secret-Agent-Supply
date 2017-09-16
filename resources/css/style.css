@@ -1,66 +1,218 @@
+/* Universal Styles */
+
 html, body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
+  background-color: white;
   font-size: 18px;
   font-family: Helvetica;
-  color: white;
+  line-height: 1.4rem;
 }
 
 h1, h2, h3, h4 {
   font-weight: bold;
+  color: white;
 }
 
-.main-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+    line-height: 1.2rem;
+  }
 
-.content {
-  width: 960px;
+}
+.container {
+  max-width: 960px;
   margin: 0 auto;
 }
 
-header {
+/* Company Header */
+
+.brand {
+  background-color: black;
+  color: white;
+}
+
+.brand .container {
   display: flex;
   align-items: center;
+  padding: 0.66rem 0 0.66rem 0.5rem;
 }
 
-header img {
+.brand img {
   height: 1.5rem;
-  width: auto;
-  margin: 0.66rem 1rem 0.66rem 0.5rem;
+  margin: 0rem 1rem 0rem 0.5rem;
 }
 
-header span {
-  margin: 0.66rem 0;
-  font-size: 1rem;
-  color: white;
-  font-weight: bold;
-}
+/* Main Banner */
 
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  background-image: url(https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg);
+.main-banner {
+  background: url(https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 25rem;
 }
 
 .hero-box {
-  width: 20rem;
   background-color: black;
-  margin-top: 9rem;
+  color: white;
+  width: 20rem;
+  padding: 2rem 3rem;
+  position: relative;
+  top: 9rem;
 }
 
-.hero-box h1{
+.hero-box h1 {
   font-size: 2rem;
+  line-height: 2.2rem;
+  margin: 0.25rem 0;
+}
+
+.hero-box h4 {
+  margin: 1.33rem 0;
+}
+
+@media only screen and (max-width: 470px) {
+    .main-banner {
+      height: 15rem;
+
+    }
+
+  .hero-box {
+   width: 100%;
+   padding: 1rem 2rem;
+   top: 10rem;
+ }
+
+ .hero-box h4 {
+   font-size: .77rem;
+   margin: 0rem;
+ }
+
+ .hero-box h1 {
+   font-size: 1rem;
+   line-height: 1.1rem;
+   margin-top: 0rem;
+ }
 
 }
+/* Navigation Bar */
 
 nav {
-  width: 100%;
   background-color: firebrick;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  list-style: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  nav ul {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+    text-align: center;
+  }
+
+}
+
+/* Products and Business Information Section */
+
+.products,
+.contact-info
+ {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0 0 0;
+}
+
+.product {
+  width: 30%;
+}
+
+.product-image {
+  border: 4px solid black;
+  padding: 2rem 0;
+  height: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 8rem;
+}
+
+.title {
+  display: block;
+  background-color: black;
   text-align: center;
+  padding: 0.5rem;
+  color: white;
+}
+
+.info {
+  width: 35%;
+
+}
+
+.contact-title {
+  display: block;
+  background-color: black;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .product {
+    width: 47%;
+  }
+  .product.glasses {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .products,
+  .contact-info {
+  flex-wrap: wrap;
+  }
+
+  .product.watch {
+    display: none;
+  }
+
+  .product {
+    width: 90%;
+    margin: auto;
+  }
+  .info {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Footer Section */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 5rem 0;
+  margin-top: 4rem;
+}
+
+@media only screen and (max-width: 470px) {
+  footer {
+    text-align: center;
+  }
 }
